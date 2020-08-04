@@ -1,7 +1,8 @@
+// require mongoose
 const mongoose = require("mongoose");
-
+// set up schema
 const Schema = mongoose.Schema;
-
+// create framework for schema components
 const workoutSchema = new Schema({
     day: {
         type: Date,

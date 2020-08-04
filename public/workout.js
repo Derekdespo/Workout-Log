@@ -5,7 +5,7 @@ async function initWorkout() {
     document
       .querySelector("a[href='/exercise?']")
       .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
-
+// creating an class for workout summary
     const workoutSummary = {
       date: formatDate(lastWorkout.day),
       totalDuration: lastWorkout.totalDuration,
@@ -18,7 +18,7 @@ async function initWorkout() {
     renderNoWorkoutText()
   }
 }
-
+// getting the total tally for the exercises
 function tallyExercises(exercises) {
   const tallied = exercises.reduce((acc, curr) => {
     if (curr.type === "resistance") {
@@ -32,7 +32,7 @@ function tallyExercises(exercises) {
   }, {});
   return tallied;
 }
-
+// function to set up and format the date
 function formatDate(date) {
   const options = {
     weekday: "long",

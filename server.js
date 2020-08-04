@@ -9,8 +9,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+var mongouri = process.env.MONGODB_URI || "mongodb://localhost/budget"
+mongoose.connect(mongouri, {
   useNewUrlParser: true,
   useFindAndModify: false
 });
